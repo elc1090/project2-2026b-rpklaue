@@ -1,0 +1,36 @@
+# Blueprint do Render (opcional, mas recomendado).
+#
+# No painel do Render: New > Blueprint > aponte para este repositório.
+# O Render vai ler este arquivo e criar o serviço web + o banco Postgres
+# automaticamente, já conectando a DATABASE_URL nas variáveis de ambiente.
+#
+# Se preferir, você também pode criar os dois serviços manualmente pela
+# interface do Render (veja o passo a passo no README.md).
+
+databases:
+  - name: western-reels-db
+    plan: free
+    databaseName: western_reels
+    user: western_reels_user
+
+services:
+  - type: web
+    name: western-reels-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: western-reels-db
+          property: connectionString
+      - key: TMDB_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

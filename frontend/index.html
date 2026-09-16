@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Western Reels — buscar filmes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a class="brand" href="index.html">Western Reels</a>
+      <div class="nav-links" id="nav-links"></div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Encontre seu próximo faroeste</h1>
+      <p class="lede">
+        Busque filmes western, veja sinopse, elenco e nota externa, e guarde
+        os seus favoritos com nota e avaliação pessoal.
+      </p>
+      <form id="search-form" class="search-form">
+        <label for="search-input" class="visually-hidden">Buscar filme</label>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Buscar por título, ex: Django, Tombstone..."
+        />
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <p class="status-message" id="status-message"></p>
+    <ul class="movie-grid" id="movie-grid"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Dados de filmes fornecidos pela API pública do TMDB.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>

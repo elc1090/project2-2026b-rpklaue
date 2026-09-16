@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Western Reels</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <a class="brand" href="index.html">Western Reels</a>
+      <div class="nav-links" id="nav-links"></div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Entrar</h1>
+    </section>
+
+    <form id="login-form" class="auth-form">
+      <label>
+        Usuário ou e-mail
+        <input type="text" id="login-identifier" required autocomplete="username" />
+      </label>
+      <label>
+        Senha
+        <input type="password" id="login-password" required autocomplete="current-password" />
+      </label>
+      <p class="form-error" id="form-error"></p>
+      <button type="submit">Entrar</button>
+      <p class="form-footer-note">Ainda não tem conta? <a href="register.html">Criar conta</a></p>
+    </form>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
